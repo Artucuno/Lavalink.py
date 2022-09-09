@@ -174,9 +174,11 @@ class PlayerUpdateEvent(Event):
 
     def __init__(self, player, raw_state):
         self.player = player
+        self.raw_state = raw_state
         self.position = raw_state.get('position')
         self.timestamp = raw_state.get('time')
         self.connected = raw_state.get('connected')
+        self.ping = raw_state.get('ping')
 
 
 class NodeConnectedEvent(Event):
